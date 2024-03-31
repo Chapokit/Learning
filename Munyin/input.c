@@ -17,6 +17,10 @@ int main(){
     printf("\nYou are %d years old", age);
     printf("\nYou are %s", name);
 
+    char[];
+
+
+
     return 0;
 
 }
