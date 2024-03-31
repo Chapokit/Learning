@@ -16,8 +16,10 @@ int main(){
    int z = x % y;
 
    printf("%d", z);
-   
-   
+
+   x++;
+
+   printf("%d", x);
 
     return 0;
 }
