@@ -4,15 +4,20 @@
 
 int main(){
 
-    double A = sqrt(9);
-    double B = pow(2,4);
-    int C = round(3.14);
-    int D = ceil(3.14);
-    int E = floor(3.99);
-    double F = fabs(-100); //absolite
-    double G = log(3);
-    // sin cos tan
-    // %lf long float
 
-    printf("\n%lf", F);
+    const double PI = 3.14159;
+    double radius;
+    double circumference;
+    double area;
+
+    printf("\nEnter the radius of a circle: ");
+    scanf("%lf", &radius);
+
+    circumference = 2 * PI * radius;
+    area = PI * radius * radius;
+
+    printf("circumference: %lf", circumference);
+    printf("area: %lf", area);
+
+    return 0;
 }
