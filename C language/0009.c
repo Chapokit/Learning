@@ -58,7 +58,7 @@ int main(){
             max=num1;
         }
         else {
-            med=num1;
+            med=num1;             //GGEZ
         }
     }
     
