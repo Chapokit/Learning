@@ -63,16 +63,16 @@ int main(){
     }
     
        
-    char ABC[3];
-    scanf("%s", &ABC);
+    char text[3];     //={0,1,2,3}
+    scanf("%s", &text);
     for(int j=0 ; j<3 ; j++){
-        if(ABC[j] == 'A'){
+        if(text[j] == 'A'){
             printf("%d ", min);
         }
-        else if(ABC[j] == 'B'){
+        else if(text[j] == 'B'){
             printf("%d ", med);
         }
-        else if(ABC[j] == 'C'){
+        else if(text[j] == 'C'){
             printf("%d ", max);
         }
     }
