@@ -1,4 +1,4 @@
-#include <stdio.h>
+
 
 int main(){
     int min, max, a, b;
