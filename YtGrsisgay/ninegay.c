@@ -1,17 +1,19 @@
 #include <stdio.h>
+#include <math.h>
 
 int main(){
-    const double PI = 3.14159;
-    double radius,circumference,area;
-    
-    printf("Input radius of circle : ");
-    scanf("%lf", &radius);
 
-    circumference = 2 * PI * radius;
-    area = PI * radius * radius;
+    double A, B ,C;
 
-    printf("circumference : %lf\n", circumference);
-    printf("area : %lf",  area);
+    printf("Enter side A : ");
+    scanf("%lf", &A);
+
+    printf("Enter side B : ");
+    scanf("%lf", &B);
+
+    C = sqrt(pow(A,2) + pow(B,2));
+
+    printf("side C = %lf", C);
 
     return 0;
 }
