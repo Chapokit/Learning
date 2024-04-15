@@ -1,32 +1,35 @@
 #include <stdio.h>
 #include <math.h>
+#include <ctype.h>
 
 int main(){
 
-    char grade;
+    char unit;
+    float temp;
 
-    printf("\nEnter grade : ");
-    scanf("%c", &grade);
+    printf("\nF or C : ");
+    scanf("%c", &unit);
 
-    switch(grade){
-        case 'A':
-            printf("W");
-            break;
-        case 'B':
-            printf("you did well");
-            break;
-        case 'C':
-            printf("not bad");
-            break;
-        case 'D':
-            printf("kbo");
-            break;
-        case 'F':
-            printf("L");
-            break;
-        default:
-        printf("?");
+    unit = toupper(unit);
+
+    if(unit == 'C'){
+        printf("Enter temp in C ");
+        scanf("%f", &temp);
+        temp = (temp * 9 / 5) + 32;
+        printf("\nTemp in F is %.1f ", temp);
     }
+    else if(unit == 'F'){
+        printf("Enter temp in F ");
+        scanf("%f", &temp);
+        temp = (temp -32) * 5 / 9;
+        printf("\nTemp in C is %.1f ", temp);
+    }
+    else{
+        printf(" %c whattt ???", unit);
+    }
+
+    
+    
 
     return 0;
 }
