@@ -4,32 +4,39 @@
 
 int main(){
 
-    char unit;
-    float temp;
+    char operator;
+    double num1, num2;
+    double result;
 
-    printf("\nF or C : ");
-    scanf("%c", &unit);
+    printf("Enter an operator (+ - * /) : ");
+    scanf("%c", &operator);
 
-    unit = toupper(unit);
+    printf("Enter Number 1 : ");
+    scanf("%lf", &num1);
 
-    if(unit == 'C'){
-        printf("Enter temp in C ");
-        scanf("%f", &temp);
-        temp = (temp * 9 / 5) + 32;
-        printf("\nTemp in F is %.1f ", temp);
+    printf("Enter Number 2 : ");
+    scanf("%lf", &num2);
+
+    switch(operator){
+        case '+':
+            result = num1 + num2;
+            printf("%lf", result);
+            break;
+        case '-':
+            result = num1 - num2;
+            printf("%lf", result);
+            break;
+        case '*':
+            result = num1 * num2;
+            printf("%lf", result);
+            break;
+        case '/':
+            result = num1 / num2;
+            printf("%lf", result);
+            break;
+        default:
+            printf("?????");
     }
-    else if(unit == 'F'){
-        printf("Enter temp in F ");
-        scanf("%f", &temp);
-        temp = (temp -32) * 5 / 9;
-        printf("\nTemp in C is %.1f ", temp);
-    }
-    else{
-        printf(" %c whattt ???", unit);
-    }
-
-    
-    
 
     return 0;
 }
