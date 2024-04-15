@@ -3,17 +3,20 @@
 
 int main(){
 
-    double A, B ,C;
+    int age;
 
-    printf("Enter side A : ");
-    scanf("%lf", &A);
+    printf("Enter age : ");
+    scanf("%d", &age);
 
-    printf("Enter side B : ");
-    scanf("%lf", &B);
-
-    C = sqrt(pow(A,2) + pow(B,2));
-
-    printf("side C = %lf", C);
+    if(age >= 18){
+        printf("You are able to get into jail");
+    }
+    else if(age < 0){
+        printf("r u kidding ?????");
+    }
+    else{
+        printf("Nabro u 2 young");
+    }
 
     return 0;
 }
