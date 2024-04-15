@@ -3,19 +3,29 @@
 
 int main(){
 
-    int age;
+    char grade;
 
-    printf("Enter age : ");
-    scanf("%d", &age);
+    printf("\nEnter grade : ");
+    scanf("%c", &grade);
 
-    if(age >= 18){
-        printf("You are able to get into jail");
-    }
-    else if(age < 0){
-        printf("r u kidding ?????");
-    }
-    else{
-        printf("Nabro u 2 young");
+    switch(grade){
+        case 'A':
+            printf("W");
+            break;
+        case 'B':
+            printf("you did well");
+            break;
+        case 'C':
+            printf("not bad");
+            break;
+        case 'D':
+            printf("kbo");
+            break;
+        case 'F':
+            printf("L");
+            break;
+        default:
+        printf("?");
     }
 
     return 0;
