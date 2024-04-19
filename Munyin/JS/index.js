@@ -1,24 +1,19 @@
-// arithmetics operators
+// accept user input
+
+
+// 1. Ez way = window prompt
 /*
-let student = 30;
+let username;
 
-student = student + 1; //can + - * 
+username = window.prompt("What's your username?")
 
-student = student ** 2;
-
-//student = student % 2;
-student -= 1;
-student++;
-student--;
-let extra = student ** 3;
-
-console.log(student);
-console.log(extra);
+console.log(username)
 */
+// 2. Pro way = HTML textbox
 
-// 1.() 2. exponents 3. * / 4. + -
-
-
-let result = 1 + 2 * 3 + 4 ** 2;
-
-console.log(result)
+let username;
+document.getElementById("mySubmit").onclick = function(){
+    username = document.getElementById("myText").value;
+    document.getElementById("myH1").textContent = `Hello! ${username}`;
+    console.log(username);
+}
