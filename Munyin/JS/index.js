@@ -7,24 +7,18 @@
 document.getElementById("myH1").textContent = 'Hello';
 document.getElementById("myP").textContent = 'Yo mei yo';
 
+
+
+let firstName = "Munyin";
+
+console.log(typeof firstName);
+console.log(`Your name is ${firstName}`);
+
+
+
+let online = true;
+
+console.log(typeof online);
+console.log(`Bro is ${online}`);
+
 */
-
-let x;
-x = 100;
-
-let y = 123;
-
-console.log(x);
-console.log(y);
-
-let age = 37;
-let price = 10.99;
-
-console.log(age);
-console.log(price);
-
-console.log(typeof age);
-
-console.log(`You are ${age} years old`);
-console.log(`The price is $${price}`)
-    
