@@ -1,19 +1,20 @@
-// accept user input
-
-
-// 1. Ez way = window prompt
+// type conversion
 /*
-let username;
+let age = window.prompt("How old are you");
+age = Number(age);
 
-username = window.prompt("What's your username?")
+age+=1;
 
-console.log(username)
-*/
-// 2. Pro way = HTML textbox
+console.log(age, typeof age);*/
 
-let username;
-document.getElementById("mySubmit").onclick = function(){
-    username = document.getElementById("myText").value;
-    document.getElementById("myH1").textContent = `Hello! ${username}`;
-    console.log(username);
-}
+let x = "pizza";
+let y = "pizza";
+let z = "pizza";
+
+x = Number(x);
+y = String(y);
+z = Boolean(z);
+
+console.log(x, typeof x);
+console.log(y, typeof y);
+console.log(z, typeof z);
