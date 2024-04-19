@@ -1,10 +1,24 @@
-``
+// arithmetics operators
+/*
+let student = 30;
 
-let fullName = "Munyin SAM"
-let age = 18;
+student = student + 1; //can + - * 
 
-let student = true;
+student = student ** 2;
 
-document.getElementById("myH1").textContent = `Your name is ${fullName}`;
-document.getElementById("myP1").textContent = `You are ${age}`;
-document.getElementById("myP2").textContent = `Am i pro ${student}`;
+//student = student % 2;
+student -= 1;
+student++;
+student--;
+let extra = student ** 3;
+
+console.log(student);
+console.log(extra);
+*/
+
+// 1.() 2. exponents 3. * / 4. + -
+
+
+let result = 1 + 2 * 3 + 4 ** 2;
+
+console.log(result)
