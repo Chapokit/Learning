@@ -5,3 +5,4 @@
 //window.alert("Nahbro")
 
 document.getElementById("myH1").textContent = 'Hello';
+document.getElementById("myP").textContent = 'Yo mei yo';
