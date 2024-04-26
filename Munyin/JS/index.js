@@ -1,33 +1,51 @@
 /*
+let time = 9;
+let isStudent = false/true
 
-const min = 50;
-const max = 100;
-
-//let randomNum = Math.floor(Math.random() * 6)+1; // 0-1
-let randomNum = Math.floor(Math.random() * (max-min)) + min;
-
-console.log(randomNum);
-
+if(time < 12){
+    console.log("Good morning!");
+}
+else{
+    console.log("Good afternoon");
+}
 */
 
-const myButton = document.getElementById("myBtn");
-const myLabel1 = document.getElementById("myLabel1");
-const myLabel2 = document.getElementById("myLabel2");
-const myLabel3 = document.getElementById("myLabel3");
-const min = 1;
-const max = 6;
+const myText = document.getElementById("myText");
+const mySubmit = document.getElementById("mySubmit");
+const resultElement = document.getElementById("result");
 
-let randomNum1;
+let age;
 
-let randomNum2;
 
-let randomNum3;
+mySubmit.onclick = function(){
 
-myButton.onclick = function(){
-    randomNum1 = Math.floor(Math.random() * (max)) + min;
-    randomNum2 = Math.floor(Math.random() * (max)) + min;
-    randomNum3 = Math.floor(Math.random() * (max)) + min;
-    myLabel1.textContent = randomNum1;
-    myLabel2.textContent = randomNum2;
-    myLabel3.textContent = randomNum3;
+    age = myText.value;
+    age = Number(age);
+    if (age >= 16) {
+
+        resultElement.textContent = `You can drive`;
+
+        if (hasLicense) {
+            resultElement.textContent = `You have a license`;
+        }
+        else {
+ 
+            resultElement.textContent = `You dont`;
+        }
+    }
+    else if (age < 0) {
+
+        resultElement.textContent = `wtf`;
+    }
+    else if (age == 0) {
+        resultElement.textContent = `nabo`;
+    }
+    else {
+        resultElement.textContent = `no`;
+    }
 }
+
+
+let hasLicense = false;
+
+
