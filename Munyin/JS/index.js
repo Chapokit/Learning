@@ -1,20 +1,12 @@
-// type conversion
-/*
-let age = window.prompt("How old are you");
-age = Number(age);
+// const = a variable that can't be changed
 
-age+=1;
+let pi = 3.14565432;
+let radius;
+let circumference;
 
-console.log(age, typeof age);*/
+radius = window.prompt(`Enter the radius of a circle`);
+radius = Number(radius);
 
-let x = "pizza";
-let y = "pizza";
-let z = "pizza";
+circumference = 2 * pi * radius;
 
-x = Number(x);
-y = String(y);
-z = Boolean(z);
-
-console.log(x, typeof x);
-console.log(y, typeof y);
-console.log(z, typeof z);
+console.log(circumference);
