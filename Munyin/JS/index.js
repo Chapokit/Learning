@@ -1,51 +1,33 @@
-/*
-let time = 9;
-let isStudent = false/true
+//.checked = property that determines the checked state of an HTML checkbox
 
-if(time < 12){
-    console.log("Good morning!");
-}
-else{
-    console.log("Good afternoon");
-}
-*/
 
-const myText = document.getElementById("myText");
+const myCheckBox = document.getElementById("myCheckBox");
+const visaBtn = document.getElementById("visaBtn");
+const masterBtn = document.getElementById("masterBtn");
+const paypalBtn = document.getElementById("paypalBtn");
 const mySubmit = document.getElementById("mySubmit");
-const resultElement = document.getElementById("result");
-
-let age;
-
+const subResult = document.getElementById("subResult");
+const paymentResult = document.getElementById("paymentResult");
 
 mySubmit.onclick = function(){
 
-    age = myText.value;
-    age = Number(age);
-    if (age >= 16) {
-
-        resultElement.textContent = `You can drive`;
-
-        if (hasLicense) {
-            resultElement.textContent = `You have a license`;
-        }
-        else {
- 
-            resultElement.textContent = `You dont`;
-        }
+    if(myCheckBox.checked){
+        subResult.textContent = "You are subscribe"
     }
-    else if (age < 0) {
+    else{
+        subResult.textContent = "You aren't subscribe"
+    }
 
-        resultElement.textContent = `wtf`;
+    if (visaBtn.checked){
+        paymentResult.textContent = "You are paying with Visa"
     }
-    else if (age == 0) {
-        resultElement.textContent = `nabo`;
+    else if (masterBtn.checked){
+        paymentResult.textContent = "You are paying with MasterCard"
     }
-    else {
-        resultElement.textContent = `no`;
+    else if (paypalBtn.checked) {
+        paymentResult.textContent = "You are paying with Paypal"
+    }
+    else{
+        paymentResult.textContent = "Nothing"
     }
 }
-
-
-let hasLicense = false;
-
-
