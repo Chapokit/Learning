@@ -1,25 +1,31 @@
-// ternary operator shortcut ? to if{} else{}
-
+// Switch
 /*
-let age = 21;
+let day = 1;
 
-let message = age >= 18 ? "You're an Adult" : "You're a minor";
-
-console.log(message);
-
-
-let time = 16;
-let greeting = time < 12 ? "Good morning" : "Good afternoon!";
-console.log(greeting);
-
-
-
-let isStudent = true;
-let message = isStudent ? "You are a student" : "You are Not a student";
-console.log(message);
-
+switch(day){
+    case 1:
+        console.log("It is Monday");
+        break;
+    case 2:
+        console.log("It is Tuesday");
+        break;
+    case 3:
+        console.log("It is Wednesday");
+        break;
+    default:
+        console.log(`${day} is not a day`);
+}
 */
 
-let purchaseAmount = 125;
-let discount = purchaseAmount >= 100 ? 10 : 0;
-console.log(`Your total is $${purchaseAmount - purchaseAmount * (discount/100)}`)
+let testScore = 92;
+let letterGrade;
+
+switch(true){
+    case testScore >= 90:
+        letterGrade = "A";
+        break;
+    case testScore >= 80:
+        letterGrade = "B";
+        break;
+}
+console.log(letterGrade);
