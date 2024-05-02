@@ -1,21 +1,11 @@
-// METHOD Chaining = Calling one method after another in one continuous line of code
+// logical operators
+// AND = &&, OR = ||, NOT = !
 
-let username = window.prompt("Enter your username: ");
+const temp = 20;
 
-// No METHOD chaining
-/*
-username = username.trim();
-let letter = username.charAt(0);
-letter = letter.toUpperCase();
-
-let extraChars = username.slice(1);
-extraChars = extraChars.toLowerCase();
-
-username = letter + extraChars;
-
-console.log(username);
-*/
-// METHOD chaining
-
-username = username.trim().charAt(0).toUpperCase() + username.trim().slice(1).toLowerCase();
-console.log(username);
+if (temp > 0 && temp <= 30){
+    console.log("Good");
+}
+else{
+    console.log("BAD");
+}
