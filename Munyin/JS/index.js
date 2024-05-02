@@ -1,47 +1,32 @@
-// String Method
-
-let Username = "Munyin";
-
+// string slicing
 /*
+const fullName = "Munyin Sam";
 
-console.log(Username.charAt(0))
-console.log(Username.indexOf("n"))
-console.log(Username.lastIndexOf("n"))
-console.log(Username.length)
+let firstName = fullName.slice(0,6);
+let lastName = fullName.slice(7,11);
+let lastName2 =  fullName.slice(7);
+
+let firstChar = fullName.slice(0,1);
+let lastChar = fullName.slice(-3);
+
+console.log(firstName);
+console.log(lastName2);
+console.log(firstChar);
+console.log(lastChar);
 
 
-let Name = "     munyin      ";
-Name = Name.trim(); //cut whitespace
-Name = Name.toUpperCase();
-Name = Name.toLowerCase();
-Name = Name.repeat(3);
+let firstName = fullName.slice(0, fullName.indexOf(" "));
+let lastName = fullName.slice(fullName.indexOf(" ") + 1);
 
-let result = Name.startsWith(" ");
-let result2 = Name.endsWith(" ");
+console.log(firstName);
+console.log(lastName);
 
-if(result){
-    console.log("Your username cant begin with white space")
-}
-else{
-    console.log(Name);
-}
-console.log(result);
-console.log(Name);
-splitName = "mun yin";
-
-let result3 = splitName.includes(" ");
-if(result3){
-    console.log("Cant have a split");
-}
 */
 
-let phoneNumber = "123-455-4214";
+const email = "kelvinsam2233@gmail.com";
 
-phoneNumber = phoneNumber.replaceAll("-","");
+let username = email.slice(0, email.indexOf("@"));
+let extension = email.slice(email.indexOf("@") + 1);
 
-console.log(phoneNumber);
-
-phoneNumber = phoneNumber.padStart(15, "0"); //until it's 15 char long
-phoneNumber = phoneNumber.padEnd(15, "0");
-console.log(phoneNumber);
-
+console.log(username);
+console.log(extension);
