@@ -1,27 +1,13 @@
-// while loop
+// for loop
 
-//let username = "";
-/*
-do{
-    username = window.prompt(`Enter your name`);
-} while (username === "" || username === null)
+for(let i = 1; i <= 20; i++){
 
-console.log(`Hello ${username}`);
-*/
-let loggedIn = false;
-
-let username;
-let password;
-
-do{
-    username = window.prompt("Enter your username");
-    password = window.prompt("Enter your password");
-
-    if(username === "user" && password === "mypass"){
-        loggedIn = true;
-        console.log("You are logged in!")
+    if(i == 13){
+        break;
     }
     else{
-        console.log("What do")
+        console.log(i);
     }
-} while (!loggedIn)
+    
+}
+console.log("Dunso");
