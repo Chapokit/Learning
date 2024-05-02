@@ -1,11 +1,15 @@
-// logical operators
-// AND = &&, OR = ||, NOT = !
+// === strict equality operator check if its equal 
+//     and have a same datatype
+// ==  comparison
+// =   assignment
+// !== stric inequality
+// != inquality
 
-const temp = 20;
+const PI = 3.14;
 
-if (temp > 0 && temp <= 30){
-    console.log("Good");
+if(PI !== "3.14"){
+    console.log("That is PI")
 }
 else{
-    console.log("BAD");
+    console.log("THat isnt PI");
 }
