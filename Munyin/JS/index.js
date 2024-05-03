@@ -1,27 +1,27 @@
-// function
+// Temp conversion
 
-function happyBirthday(username, age){
-    console.log(`hbd ${username} ${age}`);
-}
+const textBox = document.getElementById("textBox");
+const toFarenheit = document.getElementById("toFarenheit");
+const toCelcius = document.getElementById("toCelcius");
+const result = document.getElementById("result");
+let temp;
 
-function isEven(number){
 
-    return number % 2 === 0 ? true : false;
-}
+function convert(){
+    if(toFarenheit.checked){
 
-function isValidEmial(email){
-
-    /*
-    if(email.includes("@")){
-        return true;
+        temp = Number(textBox.value);
+        temp = temp * 9 / 5 + 32;
+        result.textContent = temp + "F";
+    }
+    else if(toCelcius.checked){
+        
+        temp = Number(textBox.value);
+        temp = (temp - 32) * 5 / 9;
+        result.textContent = temp + "C";
     }
     else{
-        return false;
-    }*/
-
-    return email.includes("@") ? true : false;
+        result.textContent = "Select a unit!!!";
+    }
 }
 
-happyBirthday("Munyin",18);
-console.log(isEven(10));
-console.log(isValidEmial("kelbvdsfs@"))
