@@ -1,27 +1,34 @@
-// Temp conversion
+// array
 
-const textBox = document.getElementById("textBox");
-const toFarenheit = document.getElementById("toFarenheit");
-const toCelcius = document.getElementById("toCelcius");
-const result = document.getElementById("result");
-let temp;
+let fruits = ["apple", "orange", "banana"];
+/*
+fruits[1] = "coconut";
+fruits.push("juice");
+fruits.pop();
+fruits.unshift("mango");
+fruits.shift();
 
 
-function convert(){
-    if(toFarenheit.checked){
+console.log(fruits);
 
-        temp = Number(textBox.value);
-        temp = temp * 9 / 5 + 32;
-        result.textContent = temp + "F";
-    }
-    else if(toCelcius.checked){
-        
-        temp = Number(textBox.value);
-        temp = (temp - 32) * 5 / 9;
-        result.textContent = temp + "C";
-    }
-    else{
-        result.textContent = "Select a unit!!!";
-    }
+let numOfFruits = fruits.length;
+let index = fruits.indexOf("apple"); // will return -1 if doesnt exist
+
+console.log(numOfFruits);
+console.log(index); 
+
+
+for(let i = 0; i < fruits.length; i++){
+    console.log(fruits[i]);
+}
+for (let i = fruits.length - 1; i >= 0 ; i--) {
+    console.log(fruits[i]);
 }
 
+*/
+
+fruits.sort().reverse(); //alphabetical
+
+for(let fruit of fruits){
+    console.log(fruit);
+}
