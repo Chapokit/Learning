@@ -1,34 +1,22 @@
-// array
+// spread operator ...
+
+/*
+let numbers = [1,2,3,4,5];
+let maximum = Math.max(...numbers); // spreading arrays
+let mininum = Math.min(...numbers);
+
+console.log(numbers);
+
+console.log(maximum);
+console.log(mininum);
+
+let username = "Bro Code";
+let letters = [...username].join("-");
+
+console.log(letters);*/
 
 let fruits = ["apple", "orange", "banana"];
-/*
-fruits[1] = "coconut";
-fruits.push("juice");
-fruits.pop();
-fruits.unshift("mango");
-fruits.shift();
+let vegetables = ["Carrots", "celery", "potatoes"];
+let foods = [...fruits, ...vegetables, "eggs", "milk"];
 
-
-console.log(fruits);
-
-let numOfFruits = fruits.length;
-let index = fruits.indexOf("apple"); // will return -1 if doesnt exist
-
-console.log(numOfFruits);
-console.log(index); 
-
-
-for(let i = 0; i < fruits.length; i++){
-    console.log(fruits[i]);
-}
-for (let i = fruits.length - 1; i >= 0 ; i--) {
-    console.log(fruits[i]);
-}
-
-*/
-
-fruits.sort().reverse(); //alphabetical
-
-for(let fruit of fruits){
-    console.log(fruit);
-}
+console.log(foods);
