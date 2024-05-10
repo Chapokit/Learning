@@ -1,42 +1,33 @@
 #include <stdio.h>
-#include <math.h>
-#include <ctype.h>
+#include <string.h>
 
 int main(){
+    
+    char string1[] = "Wan1";
+    char string2[] = "AAA2";
 
-    char operator;
-    double num1, num2;
-    double result;
+    // strlwr(string1);                                       //lower case
+    // strupr(string1);                                       //upper case
+    // strcat(string1, string2);                              //add str2 at the end of str1
+    // strncat(string1, string2, 1);                          //add n character from str 2 to 1
+    // strcpy(string1, string2);                              //copy str2 to 1
+    // strncpy(string1, string2, 2);                          //copy n character from str 2 to 1
 
-    printf("Enter an operator (+ - * /) : ");
-    scanf("%c", &operator);
+    // strset(string1 , 'R');                                 //set all to given character
+    // strnset(string1 , 'R', 2);                             //set n 
+    // strrev(string1);                                       //reverse
 
-    printf("Enter Number 1 : ");
-    scanf("%lf", &num1);
+    //printf("%s ", string1);
 
-    printf("Enter Number 2 : ");
-    scanf("%lf", &num2);
+    //int result = strlen(string1);                           //string length 
+    //int result = strcmp(string1, string2);                  //string compare all character same0 not-same +/-  depend on ascii
+    //int result = strncmp(string1, string2, 2);              //n
+    //int result = strcmpi(string1, string1);                 //ignore upper/lower case
+    
 
-    switch(operator){
-        case '+':
-            result = num1 + num2;
-            printf("%lf", result);
-            break;
-        case '-':
-            result = num1 - num2;
-            printf("%lf", result);
-            break;
-        case '*':
-            result = num1 * num2;
-            printf("%lf", result);
-            break;
-        case '/':
-            result = num1 / num2;
-            printf("%lf", result);
-            break;
-        default:
-            printf("?????");
-    }
-
-    return 0;
+    printf("%d", result);
+    
+    
+    
+    
 }
