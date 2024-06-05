@@ -4,38 +4,29 @@
 
 int main(){
 
-    char op;
-    double num1, num2;
+    int temp;
+    char unit;
 
-    std::cout << "+++++++++++CALCULATOR++++++++++++++"<< '\n';
+    std::cout << "input temperture unit (C or F) : ";
+    std::cin >> unit;
 
-    std::cout << "input num1 : ";
-    std::cin >> num1;
+    unit = toupper(unit);
 
-    std::cout << "input num2 : ";
-    std::cin >> num2;
+    std::cout << "Input temperture : ";
+    std::cin >> temp;
 
-    std::cout << "choose operator (+ - * /) : ";
-    std::cin >> op;
-    
-    switch(op)
+    switch (unit)
     {
-        case '+':
-            std::cout << "result is " << num1 + num2 << '\n';
-            break;
-        case '-':
-            std::cout << "result is " << num1 - num2 << '\n';
-            break;
-        case '*':
-            std::cout << "result is " << num1 * num2 << '\n';
-            break;
-        case '/':
-            std::cout << "result is " << num1 / num2 << '\n';
-            break;
-        default:
-            std::cout << "Please enter valid operator : "<< '\n';
-    };
+    case 'C':
+        std::cout << "The temperture is " << (double)temp * 9 / 5 + 32 << " Fahrenheit" ;
+        break;
+    case 'F':
+        std::cout << "The temperture is " << (double)(temp - 32) * 5 / 9 << " Celsius" ;
+        break;
+    default:
+        std::cout << "Please input valid unit ";
+        break;
+    }
 
-    std::cout << "+++++++++++++++++++++++++++++++++++";
     return 0;
 }
