@@ -4,29 +4,47 @@
 
 int main(){
 
-    int temp;
-    char unit;
+    int row;
+    int column;
+    char symbol;
 
-    std::cout << "input temperture unit (C or F) : ";
-    std::cin >> unit;
+    std::cout << "How many rows : ";
+    std::cin >> row;
 
-    unit = toupper(unit);
+    std::cout << "How many column : ";
+    std::cin >> column;
 
-    std::cout << "Input temperture : ";
-    std::cin >> temp;
+    
 
-    switch (unit)
+    
+    for (int i = 1; i <= row; i++)
     {
-    case 'C':
-        std::cout << "The temperture is " << (double)temp * 9 / 5 + 32 << " Fahrenheit" ;
-        break;
-    case 'F':
-        std::cout << "The temperture is " << (double)(temp - 32) * 5 / 9 << " Celsius" ;
-        break;
-    default:
-        std::cout << "Please input valid unit ";
-        break;
+        if(i == 1 || i == row)
+        {
+            for (int j = 1; j <= column; j++)
+            {
+                std::cout << "_";
+            }
+            
+        }
+        else
+        {
+            for (int k = 1; k <= column; k++)
+            {
+                if(k == 1 || k == column)
+                {
+                    std::cout << "|";
+                }
+                else
+                {
+                    std::cout << ' ';
+                }
+            }
+            
+        }
+        std::cout << '\n';
     }
-
+    
+    
     return 0;
 }
