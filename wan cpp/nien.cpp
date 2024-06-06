@@ -2,24 +2,20 @@
 #include <cmath>
 #include <ctime>
 
-void happyBirthday(std::string name, int age);
-
+std::string concatStrings(std::string string1, std::string string2);
 
 int main(){
 
-    std::string name = "Wan";
-    int age = 18;
+    std::string firstName = "Wan";
+    std::string lastName = "Nachapol";
+    std::string fullName = concatStrings(firstName, lastName);
 
-    happyBirthday(name, age);
-    
+    std::cout << "Hello " << fullName;
+
     return 0;
 }
 
-void happyBirthday(std::string name, int age)
+std::string concatStrings(std::string string1, std::string string2)
 {
-    std::cout << "Happy birthday to " << name << '\n';
-    std::cout << "Happy birthday to " << name << '\n';
-    std::cout << "Happy birthday dear " << name << '\n';
-    std::cout << "Happy birthday to " << name << '\n';
-    std::cout << "You are " << age << " years old";
+    return string1 + " " + string2;
 }
