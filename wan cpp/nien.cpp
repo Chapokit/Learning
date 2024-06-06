@@ -1,50 +1,25 @@
 #include <iostream>
 #include <cmath>
+#include <ctime>
+
+void happyBirthday(std::string name, int age);
 
 
 int main(){
 
-    int row;
-    int column;
-    char symbol;
+    std::string name = "Wan";
+    int age = 18;
 
-    std::cout << "How many rows : ";
-    std::cin >> row;
-
-    std::cout << "How many column : ";
-    std::cin >> column;
-
-    
-
-    
-    for (int i = 1; i <= row; i++)
-    {
-        if(i == 1 || i == row)
-        {
-            for (int j = 1; j <= column; j++)
-            {
-                std::cout << "_";
-            }
-            
-        }
-        else
-        {
-            for (int k = 1; k <= column; k++)
-            {
-                if(k == 1 || k == column)
-                {
-                    std::cout << "|";
-                }
-                else
-                {
-                    std::cout << ' ';
-                }
-            }
-            
-        }
-        std::cout << '\n';
-    }
-    
+    happyBirthday(name, age);
     
     return 0;
+}
+
+void happyBirthday(std::string name, int age)
+{
+    std::cout << "Happy birthday to " << name << '\n';
+    std::cout << "Happy birthday to " << name << '\n';
+    std::cout << "Happy birthday dear " << name << '\n';
+    std::cout << "Happy birthday to " << name << '\n';
+    std::cout << "You are " << age << " years old";
 }
