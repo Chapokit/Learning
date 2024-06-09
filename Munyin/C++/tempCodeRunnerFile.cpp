@@ -1,5 +1,2 @@
-
-
-
-int main() {
-    using namespace first;
+    return 0;
+}
