@@ -1,4 +1,4 @@
-word = "ABCD"
+word = input()
 s = "#"
 
 first = ""
@@ -8,7 +8,12 @@ third = ""
 length = len(word)
 
 for count, character in enumerate(word):
-    if (count+1)%3 != 0 and count != 0:
+    if (count+1)%3 == 1 and count != 0:
+        first += ".#.."
+        second += ".#.#"
+        third += f".{character}."
+        s = "#"
+    elif (count+1)%3 != 0 and count != 0:
         first += ".#.."
         second += ".#.#"
         third += f"#.{character}."
@@ -21,14 +26,14 @@ for count, character in enumerate(word):
     elif (count+1) %3 == 0:
         first += ".*.."
         second += ".*.*"
-        third += f"*.{character}."
+        third += f"*.{character}.*"
         s = "*"
-
-print(f".{first}")
-print(f"{second}.")
-print(f"{third}{s}")
-print(f"{second}.")
-print(f".{first}")
+if word:
+    print(f".{first}")
+    print(f"{second}.")
+    print(f"{third}{s}")
+    print(f"{second}.")
+    print(f".{first}")
 
 
 
