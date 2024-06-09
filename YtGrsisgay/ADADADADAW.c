@@ -1,26 +1,36 @@
 #include <stdio.h>
-
-typedef struct 
-{
-    char name[15];
-    float gpa;
-
-}Student;
-
-
+#include <stdlib.h>
+#include <time.h>
 
 int main(){
 
-    Student student1 = {"Wadadad", 2.5};
-    Student student2 = {"aaaaaaaaaaaaaaa", 3.0};
-    Student student3 = {"naaaaa", 4.1};
+    srand(time(0));
 
-    Student student[] = {student1, student2, student3};
+    int Num = (rand() % 100) + 1;
+    int guess, i = 0;
 
-    for (int i = 0; i < sizeof(student) / sizeof(student[0]); i++)
+    printf("enter number : ");
+    scanf("%d", &guess);
+
+    while(guess != Num)
     {
-        printf("%-12s\t", student[i].name);
-        printf("%.2f\n", student[i].gpa);
+        if(guess < Num)
+        {
+            printf("lower\nguess new number between : ");
+            scanf("%d", &guess);
+            i += 1;
+        }
+        if(guess > Num)
+        {
+            printf("higher\nguess new number between : ");
+            scanf("%d", &guess);
+            i += 1;
+        }
     }
-    
+    if(guess = Num)
+    {
+        printf("correct");
+        printf("you have guess %d times", i);
+    }
+
 }
