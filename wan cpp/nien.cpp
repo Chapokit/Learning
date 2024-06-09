@@ -2,20 +2,18 @@
 #include <cmath>
 #include <ctime>
 
-std::string concatStrings(std::string string1, std::string string2);
+void showbalance(double balance);
+double deposite();
+double withdraw();
 
-int main(){
+int main()
+{
+    double balance = 0;
+    int 
 
-    std::string firstName = "Wan";
-    std::string lastName = "Nachapol";
-    std::string fullName = concatStrings(firstName, lastName);
-
-    std::cout << "Hello " << fullName;
-
-    return 0;
 }
 
-std::string concatStrings(std::string string1, std::string string2)
+void showbalance(double balance)
 {
-    return string1 + " " + string2;
+    std::cout << "Your bank ";
 }
