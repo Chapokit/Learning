@@ -1,40 +1,47 @@
 #include <iostream>
 
-int searchArray(int array[], int size, int element);
+void sortArray(int array[], int size);
 
 int main(){
 
-    int numbers[] = {1, 2, 3, 4, 5, 6, 7, 8 , 9, 10};
-    int size = sizeof(numbers) / sizeof(numbers[0]);
-    int index;
-    int myNum;
-
-    std::cout << "Enter element to search for : " << '\n';
-    std::cin >> myNum;
-
-    index = searchArray(numbers, size, myNum);
-
-    if (index != -1)
-    {
-        std::cout << myNum << " is at index " << index + 1;
-    }
-    else
-    {
-        std::cout << myNum << " is't in the array";
-    }
+    
+    int arrays[] = {8, 3, 5, 1, 4, 9, 7, 2, 10, 6};
+    int size = sizeof(arrays) / sizeof(arrays[0]);
+    
     
 
+    for (int i : arrays)
+    {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+
+    sortArray(arrays, size);
+    
+    for (int i : arrays)
+    {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+    
+    
 }
 
-int searchArray(int array[], int size, int element)
+void sortArray(int array[], int size)
 {
-    for(int i = 0; i < size; i++)
+    int temp = 0;
+    for (int i = 0; i < size - 1; i++)
     {
-        if (array[i] == element)
+        for (int j = 0; j < size - 1; j++)
         {
-            return i;
+            if (array[j] > array[j + 1])
+            {
+                temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+             
         }
-        
+
     }
-    return -1;
 }
