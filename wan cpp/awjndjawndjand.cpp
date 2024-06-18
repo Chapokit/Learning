@@ -1,52 +1,57 @@
 #include <iostream>
-#include <string>
-
+#include <cmath>
+//6011000990139424
 
 int main(){
 
-    std::string question[] = {"1.What year was C++ created? :",
-                              "2.Who invented C++? : ",
-                              "3.What is the predecessor of C++? :",
-                              "4.Is nien gay? : "};
+    long long int num;
+    int sum1 = 0;
+    int sum2 = 0;
 
-    std::string options[][4] = {{"A. 1969", "B. 1975", "C. 1985", "D. 1989"},
-                                {"A. Guido van Rossum", "B. Bjarne Stroustrup", "C. John Carmack", "D. Mark Zuckerburg"},
-                                {"A. C", "B. C+", "C. C--", "D. B++"},
-                                {"A. Yes", "B. No", "C. Nah", "D. Nope"}};
+    std::cout << "*****Credit Card Checker*****" << '\n';
+    std::cout << "Please enter your credit card : ";
+    std::cin >> num;
+    
+    long long num1 = round(num / 10);
+    long long num2 = num;
+    
 
-    char answer[] = {'C', 'B', 'A', 'A'};
-
-    int size = sizeof(question) / sizeof(question[0]);
-    char guess;
-    int score = 0;
-
-    for (int i = 0; i < size; i++)
+    for (int i = 1; num1 > 0; i++)
     {
-        std::cout << "*************************************************\n";
-        std::cout << question[i] << '\n';
-        std::cout << "*************************************************\n";
-        for (int j = 0; j < sizeof(options[i]) / sizeof(options[i][0]); j++)
+       
+        int rm1;
+        
+        rm1 = num1 % 10;
+        rm1 *= 2;
+        if (rm1 < 10)
         {
-            std::cout << options[i][j] << '\n';
-        }
-
-        std::cin >> guess;
-
-        guess = toupper(guess);
-
-        if (guess == answer[i])
-        {
-            score++;
-            std::cout << "Correct!!!" << '\n';
+            sum1 += rm1;
+            num1 /= 100;
         }
         else
         {
-            std::cout << "Nice try" << '\n';
+            rm1 = (rm1 % 10) + 1;
+            sum1 += rm1;
+            num1 /= 100;
         }
-        
+          
     }
-
-    std::cout << "*************************************************\n";
-    std::cout << "Thank you for playing Score = " << score << " / 4\n";
-    std::cout << "*************************************************\n";
+    for (int j = 1; num2 > 0; j++)
+    {
+        int rm2;
+        rm2 = num2 % 10;
+        sum2 += rm2;
+        num2 /= 100;
+    }
+    
+    if ((sum1 + sum2) % 10 == 0)
+    {
+        std::cout << "Your credit card is valid";
+    }
+    else
+    {
+        std::cout << "You have invalid credit card";
+    }
+    
+    
 }
