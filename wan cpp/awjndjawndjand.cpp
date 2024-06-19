@@ -2,56 +2,50 @@
 #include <cmath>
 //6011000990139424
 
+int Digit(int num);
+int sumEven(std::string num);
+int sumOdd(std::string num);
+
 int main(){
 
-    long long int num;
-    int sum1 = 0;
-    int sum2 = 0;
+    std::string ccnum;
 
-    std::cout << "*****Credit Card Checker*****" << '\n';
-    std::cout << "Please enter your credit card : ";
-    std::cin >> num;
-    
-    long long num1 = round(num / 10);
-    long long num2 = num;
-    
+    std::cout << "Input your credit card number : ";
+    std::cin >> ccnum;
 
-    for (int i = 1; num1 > 0; i++)
-    {
-       
-        int rm1;
-        
-        rm1 = num1 % 10;
-        rm1 *= 2;
-        if (rm1 < 10)
-        {
-            sum1 += rm1;
-            num1 /= 100;
-        }
-        else
-        {
-            rm1 = (rm1 % 10) + 1;
-            sum1 += rm1;
-            num1 /= 100;
-        }
-          
-    }
-    for (int j = 1; num2 > 0; j++)
-    {
-        int rm2;
-        rm2 = num2 % 10;
-        sum2 += rm2;
-        num2 /= 100;
-    }
-    
-    if ((sum1 + sum2) % 10 == 0)
+    if ((sumEven(ccnum) + sumOdd(ccnum)) % 10 == 0)
     {
         std::cout << "Your credit card is valid";
     }
     else
     {
-        std::cout << "You have invalid credit card";
+        std::cout << "Your credit card is invalid";
     }
     
-    
+   
+
+}
+
+int Digit(int num)
+{
+    num = (num % 10) + ((num / 10) % 10);
+    return num;
+}
+int sumEven(std::string num)
+{
+    int sum = 0;
+    for (int i = num.size() - 2; i >= 0; i-=2)
+    {
+        sum += Digit((num.at(i) - '0') * 2);
+    }
+    return sum;
+}
+int sumOdd(std::string num)
+{
+    int sum = 0;
+    for (int i = num.size() - 1; i >= 0; i-=2)
+    {
+        sum += (num.at(i) - '0');
+    }
+    return sum;
 }
