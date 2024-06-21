@@ -1,51 +1,178 @@
 #include <iostream>
-#include <cmath>
-//6011000990139424
+#include <ctime>
 
-int Digit(int num);
-int sumEven(std::string num);
-int sumOdd(std::string num);
+void drawBoard(char *space);
+void playerMove(char *space, char player);
+void computerMove(char *space, char computer);
+bool checkWinner(char *space, char player, char computer);
+bool checkTie(char *space);
+
 
 int main(){
 
-    std::string ccnum;
-
-    std::cout << "Input your credit card number : ";
-    std::cin >> ccnum;
-
-    if ((sumEven(ccnum) + sumOdd(ccnum)) % 10 == 0)
-    {
-        std::cout << "Your credit card is valid";
-    }
-    else
-    {
-        std::cout << "Your credit card is invalid";
-    }
+    char space[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
+    char player = 'X';
+    char computer = 'O';
+    bool running = true;
     
+    
+    drawBoard(space);
+
+    while (running)
+    {
+        playerMove(space, player);
+        drawBoard(space);
+        if (checkWinner(space, player, computer))
+        {
+            running = false;
+            break;
+            
+        }
+        else if (checkTie(space))
+        {
+            running = false;
+            break;
+            
+        }
+        
+        
+        
+        
+        computerMove(space, computer);
+        drawBoard(space);
+        if (checkWinner(space, player, computer))
+        {
+            running = false;
+            break;
+        }
+        else if (checkTie(space))
+        {
+            running = false;
+            break;
+        }
+        
+    }
+
+    return 0;
+}
+
+void drawBoard(char *space)
+{   
+    std::cout << "     |     |     \n";
+    std::cout << "  " << space[0] << "  |  " << space[1] << "  |  " << space[2] << '\n';
+    std::cout << "_____|_____|_____\n";
+    std::cout << "     |     |     \n";
+    std::cout << "  " << space[3] << "  |  " << space[4] << "  |  " << space[5] << '\n';
+    std::cout << "_____|_____|_____\n";
+    std::cout << "     |     |     \n";
+    std::cout << "  " << space[6] << "  |  " << space[7] << "  |  " << space[8] << '\n';
+    
+}
+void playerMove(char *space, char player)
+{
+    int number;
+    
+    do
+    {
+        std::cout << "Enter spot between 1 to 9 : ";
+        std::cin >> number;
+        number--;
+        if (space[number] == ' ' )
+        {
+            space[number] = player;
+            break;
+        }
+        else
+        {
+            std::cout << "This spot was taken\n";
+        }
+       
+    }while (!number > 0 || !number < 8);
    
+    
+    
+        
+        
+        
+    
+    
+}
+void computerMove(char *space, char computer)
+{
+    int number;
+    srand(time(NULL));
 
-}
-
-int Digit(int num)
-{
-    num = (num % 10) + ((num / 10) % 10);
-    return num;
-}
-int sumEven(std::string num)
-{
-    int sum = 0;
-    for (int i = num.size() - 2; i >= 0; i-=2)
+    while(true)
     {
-        sum += Digit((num.at(i) - '0') * 2);
+        number = rand() % 9;
+        if (space[number] == ' ')
+        {
+            space[number] = computer;
+            break;
+        }
+        
     }
-    return sum;
 }
-int sumOdd(std::string num)
+bool checkWinner(char *space, char player, char computer)
 {
-    int sum = 0;
-    for (int i = num.size() - 1; i >= 0; i-=2)
-    {
-        sum += (num.at(i) - '0');
-    }
-    return sum;
+   if (space[0] != ' ' && space[0] == space[1] && space[1] == space[2])
+   {
+        space[0] == player ? std::cout << "You win\n" : std::cout << "You lose\n";
+        return true;
+   }
+   else if (space[3] != ' ' && space[3] == space[4] && space[4] == space[5])
+   {
+        space[3] == player ? std::cout << "You win\n" : std::cout << "You lose\n";
+        return true;
+   }
+   else if (space[6] != ' ' && space[6] == space[7] && space[7] == space[8])
+   {
+        space[6] == player ? std::cout << "You win\n" : std::cout << "You lose\n";
+        return true;
+   }
+   else if (space[0] != ' ' && space[0] == space[3] && space[3] == space[6])
+   {
+        space[0] == player ? std::cout << "You win\n" : std::cout << "You lose\n";
+        return true;
+   }
+   else if (space[1] != ' ' && space[1] == space[4] && space[4] == space[7])
+   {
+        space[1] == player ? std::cout << "You win\n" : std::cout << "You lose\n";
+        return true;
+   }
+   else if (space[2] != ' ' && space[2] == space[5] && space[5] == space[8])
+   {
+        space[2] == player ? std::cout << "You win\n" : std::cout << "You lose\n";
+        return true;
+   }
+   else if (space[0] != ' ' && space[0] == space[4] && space[4] == space[8])
+   {
+        space[0] == player ? std::cout << "You win\n" : std::cout << "You lose\n";
+        return true;
+   }
+   else if (space[2] != ' ' && space[2] == space[4] && space[4] == space[6])
+   {
+        space[2] == player ? std::cout << "You win\n" : std::cout << "You lose\n";
+        return true;
+   }
+   else
+   {
+    return false;
+   }
+   
+   
+    return 0;
+}
+bool checkTie(char *space)
+{
+        for (int i = 0; i < 9; i++)
+        {
+            
+            if (space[i] == ' ')
+            {
+                return false;
+            }
+        }
+    std::cout << "It's a tie";
+    return true;
 }
