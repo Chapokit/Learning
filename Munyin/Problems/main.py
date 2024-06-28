@@ -1,5 +1,5 @@
 N = 10
-question = "ABCABCABCABC"
+question = "AAAAABBBBB"
 
 def Adrain():
     correct = 0
