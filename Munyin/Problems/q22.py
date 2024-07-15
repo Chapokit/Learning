@@ -1,9 +1,9 @@
 n = 4
-width = 0
 
-def center(original, insert):
-    middle_index = len(original) // 2
-    return original[:middle_index] + insert + original[middle_index:]
+def insert(text,pos):
+
+    inserted = text[:pos] + "*" + text[pos:]
+    return inserted
 
 if n % 2 == 0:
     width = n - 1
@@ -11,9 +11,11 @@ else:
     width = n
 
 for i in range(n):
-    line = "-" * (width - 1)
+    if i==0 or i==(width-1):
+        line = "-" * (width - 1)
+        print(insert(line,(width//2)))
+    
+    for j in range(width):
+        pass
 
-    if i == 0:
-        line = center(line, "*")
 
-    print(line)  # Output the result

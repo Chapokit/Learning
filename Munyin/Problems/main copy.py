@@ -1,4 +1,10 @@
-a, b, c = map(int, input().split())
-print(c-b-1 if c-b>b-a else b-a-1)
+n = input()
+val = 0
+for i in range(n+1):
+    if (i)%2 == 0:
+        val+=i
+        
+
+print(val)
 
 
