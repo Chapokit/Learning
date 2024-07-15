@@ -1,2 +1,2 @@
 
-        if j == 0 or width-1:
+        if score[i][j] > score[j][i]:           
