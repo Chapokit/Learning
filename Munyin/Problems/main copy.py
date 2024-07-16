@@ -1,10 +1,9 @@
-n = input()
-val = 0
-for i in range(n+1):
-    if (i)%2 == 0:
-        val+=i
-        
+data = [('Germany', 6), ('Ghana', 4), ('Serbia', 3), ('Australia', 3)]
 
-print(val)
+# Get the scores
+points = [score for country, score in data]
 
+# Find duplicates
+output = [score if points.count(score) > 1 else 'x' for score in points]
 
+print(output)

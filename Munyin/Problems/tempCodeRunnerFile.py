@@ -1,2 +1,4 @@
+ues())
+print(countries)
 
-        if score[i][j] > score[j][i]:           
+for i in range(4):

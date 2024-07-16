@@ -2,7 +2,7 @@ country = {"Denmark": 0, "Netherlands": 0, "Cameroon": 0, "Japan": 0}
 score = [[0, 0, 2, 1], [2, 0, 2, 1], [1, 1, 0, 0], [3, 0, 1, 0]]
 
 countries = list(country.keys())
-# print(countries)
+print(countries)
 
 for i in range(4):
     for j in range(4):
