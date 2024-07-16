@@ -1,19 +1,16 @@
-burger_list = []
-burger = {"top": "bun", "middle 1": "cheese", "middle 2": "meat", "bottom": "bun"}
+def round_or_not(num):
+# use if-else here
 
-for key, value in enumerate(burger.items()):
-    burger_list.append(value)
+   decimal_part = str(num).split(".")
 
+   if len(decimal_part) > 1 and len(decimal_part[1]) > 0:
+        first_digit = int(decimal_part[1][0])
+        if first_digit > 5:
+            print(int(decimal_part[0])+1)
+        else:
+            print(decimal_part[0])
 
+# input here
+user_num = input("What is your number? ")
 
-burger_list = burger_list[::-1]
-burger.clear()
-print(f"The dict should be blank by now: {burger}")
-print(f"WOW BURGER: {burger_list}")
-print()
-
-
-burger['middle 2'] = "banana"
-print("Heh, Banana hamburger")
-print(f"Current state of burger: {burger}")
-print(f"Are your list: {burger_list} empty?")
+round_or_not(user_num)

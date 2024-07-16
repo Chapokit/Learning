@@ -1,9 +1,5 @@
-data = [('Germany', 6), ('Ghana', 4), ('Serbia', 3), ('Australia', 3)]
-
-# Get the scores
-points = [score for country, score in data]
-
-# Find duplicates
-output = [score if points.count(score) > 1 else 'x' for score in points]
-
-print(output)
+def to_list(string):
+    return [name.strip() for name in string.split(",") if name.strip()]
+user_input = "Solaire, Astel, Kaine, Emil, Rathalos"
+result = to_list(user_input)
+print(result) 

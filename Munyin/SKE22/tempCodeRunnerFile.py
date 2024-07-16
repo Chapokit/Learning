@@ -1,1 +1,1 @@
-.index(max(time_that_occur))
+list_value = map(str, list_value)
