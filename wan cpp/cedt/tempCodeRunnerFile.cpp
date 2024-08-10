@@ -26,13 +26,13 @@ int main(){
     int alldecimal = stoi(allstring);
 
     int oneee = 1;
-    for (int i = 1; i < lastdigit; i++)
+    for (int i = 1; i < middigit; i++)
     {
         oneee = (oneee * 10) + 1;
     }
     
     int bon = alldecimal - mid;
-    int lang = pow(10, middigit) * (oneee * 9);
+    int lang = pow(10, lastdigit) * (oneee * 9);
 
     int lek = lang * front;
 
