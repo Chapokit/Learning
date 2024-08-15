@@ -2,6 +2,8 @@
 
 using namespace std;
 
+bool isDelimiter(char ch);
+
 int main(){
 
     string wanted, text;
@@ -14,22 +16,17 @@ int main(){
     for (int i = 0; i <= text.length() - wanted.length(); i++)
     {   
         int countsmall = 0;
-        if (text[i] == wanted[0] && text[i - 1] == ' ' && i != 0)
+        if ((i == 0 || isDelimiter(text[i - 1])) && (i + wanted.length() == text.length() || isDelimiter(text[i + wanted.length()])))
         {
-            countsmall++;
-            for (int j = 1; j < wanted.length() ; j++)
+            for (int j = 0; j < wanted.length() ; j++)
             {
-                if (text[i + j] == wanted[0 + j] && i != 0 && i != text.length() - wanted.length())
+                if (text[i + j] == wanted[j])
                 {
                     countsmall++;
                 }
                 else 
                 {
                     break;
-                }
-                if (j == wanted.length() - 1 && text[i + wanted.length()] != ' ')
-                {
-                    countsmall = 0;
                 }
                 
             }
@@ -41,4 +38,9 @@ int main(){
         }  
     }
     cout << countbig;
+}
+
+bool isDelimiter(char ch) 
+{
+    return !(ch >= 'a' && ch <= 'z') && !(ch >= 'A' && ch <= 'Z') && !(ch >= '0' && ch <= '9');
 }
