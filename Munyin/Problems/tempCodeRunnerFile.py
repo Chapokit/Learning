@@ -1,2 +1,5 @@
-
-print(center)
+a = float(input("Enter value of the first number: "))
+b = float(input("Enter value of the second number: "))
+op = input("Enter value of the operator: ")
+answer = calculate(a,b,op)
+print(f"{a:.2f} {op} {b:.2f} = {answer:.2f}")

@@ -1,29 +1,40 @@
-def to_list(string):
-    # l = []
-    # for letter in string:
-    #     if letter != " " and letter != ",":
-    #         l.append(letter)
-    # return l
-    return [name for name in string.split() if name]
 
-def to_str(list_value):
+def calculate_change(charge, payment):
+    return payment-charge
 
-    list_value = map(str, list_value)
-    l = []
-    for letter in list_value:
-        if letter not in (" ", ",", "[", "]", '"'):
+def read_all_inputs():
 
-            l.append(letter)
-    answer = " ".join(l)
+    name = input("Please enter your name: ")
+    charge = float(input("Please enter your charge: "))
+    payment = float(input("Please enter your payment: "))
+
+    return name, charge, payment
+
+def find_change_in_bills(change):
     
-    return answer
+    FIVEHUNDRED = 0
+    HUNDRED = 0
+    TWENTY = 0
+    while change >= 500:
+        change -= 500
+        FIVEHUNDRED += 1
+    while change >= 100:
+        change -= 100
+        HUNDRED += 1
+    while change >= 20:
+        change -= 20
+        TWENTY += 1
+    coins = change
 
-list_or_str = input("Should the value be turned into a list or a string? ")
-user_input = input("What value would you like to convert? ")
-list_or_str = list_or_str.upper()  # Assign the uppercase result back
-if list_or_str == "STR":
-    print(to_str(eval(user_input)))
-elif list_or_str == "LIST":
-    print(to_list(user_input))
-else:
-    pass
+    return FIVEHUNDRED,HUNDRED,TWENTY,coins
+
+def show_change(FIVEHUNDRED,HUNDRED,TWENTY,coins):
+    print(f"You will receive {FIVEHUNDRED} 500-Baht bills, {HUNDRED} 100-Baht bills, {TWENTY} 20-Baht bills, and {coins:.2f} Baht change in coins.")
+
+
+name, charge, payment = read_all_inputs()
+change = calculate_change(charge, payment)
+a,b,c,d = find_change_in_bills(change)
+print(f"Hello, {name}.  Thank you for visiting.")
+print(f"Your change is {change:.2f} Baht.")
+print(show_change(a,b,c,d))
