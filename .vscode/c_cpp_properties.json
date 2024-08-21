@@ -4,6 +4,8 @@
             "name": "Win32",
             "includePath": [
                 "C:\\msys64\\mingw64\\include"
+                ,"C:\\msys64\\mingw64\\include\\c++"
+                ,"C:\\msys64\\mingw32\\bin"
             ],
             "defines": [
                 "_DEBUG",
