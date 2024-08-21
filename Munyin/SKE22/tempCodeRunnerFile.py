@@ -1,5 +1,7 @@
-n = float(input("Input width? "))
-l = float(input("Input length? "))
-a = (n*l)//100
-print(f"The landlord has {a:.0f} pieces of land available for sale.")
-print(f"He will earn {a*1400:.0f} pounds from the sale.")
+def calculate_distance(v, a, t):
+    return v*t + 0.5 * a * t **2
+
+
+
+dist, velo, acc, duration = 0, 2, 0.5, 60
+ans = calculate_distance(t=duration, v= velo, a =acc)

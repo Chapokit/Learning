@@ -1,11 +1,14 @@
-import math
+if os.path.exists(LAB):
+    print(f"{LAB} downloaded successfully.")
+else:
+    print(f"Failed to download {LAB}.")
+import urllib.request
+import os
 
-x = int(input("Enter value of x: "))
-a = int(input("Enter value of a: "))
-b = int(input("Enter value of b: "))
-
-def change_log_base(x,a,b):
-    return math.log(x,b)/math.log(a,b)
-
-print(f"Logarithm of {x:.3f} with base {a:.3f} = {math.log(x,a):.3f}")
-print(f"Logarithm of {x:.3f} with base {b:.3f} / Logarithm of {a:.3f} with base {b:.3f} = {change_log_base(x,a,b):.3f}")
+LAB = "turtlelab1.py"
+url = f"http://elab.cpe.ku.ac.th/turtlelab/%7BLAB%7D"
+urllib.request.urlretrieve(url, LAB)
+if os.path.exists(LAB):
+    print(f"{LAB} downloaded successfully.")
+else:
+    print(f"Failed to download {LAB}.")
