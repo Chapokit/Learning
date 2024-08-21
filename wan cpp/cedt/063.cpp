@@ -14,7 +14,7 @@ int main(){
 
     for (int i = 1; i <= h2; i++)
     {
-        for (int j = 1; j <= h; j++)
+        for (int j = 1; j <= (h2 * 2) - 1; j++)
         {
             
             if (j == h || j == noy)
