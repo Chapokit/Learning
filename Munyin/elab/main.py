@@ -1,13 +1,19 @@
-LAB = "turtlelab3.py"
+LAB = "turtlelab3x.py"
 import urllib.request
-urllib.request.urlretrieve(f"http://elab.cpe.ku.ac.th/turtlelab/{LAB}.2", LAB)
+urllib.request.urlretrieve(f"http://elab.cpe.ku.ac.th/turtlelab/{LAB}",LAB)
 
+from turtlelab3x import turtle,home,shop,check
+import math
+from math import atan, degrees, sqrt
 
-from turtlelab3 import turtle, home, check
+distance1 = math.sqrt( (shop.x)**2 + (shop.y)**2 )
+angle = degrees(atan(abs((shop.y/shop.x))))
+turtle.left(angle)
+turtle.forward(distance1)
 
-from math import degrees,atan
-
-distance = (home.x**2 + home.y**2)**0.5
-angle = degrees(atan(abs(home.y/home.x)))
 turtle.right(angle)
-turtle.forward(distance)
+
+distance2 = math.sqrt( (home.x-shop.x)**2 + (home.y-shop.y)**2 )
+angle = degrees(atan(abs(((home.y-shop.y) / (home.x-shop.x)))))
+turtle.left(angle)
+turtle.forward(distance2)
